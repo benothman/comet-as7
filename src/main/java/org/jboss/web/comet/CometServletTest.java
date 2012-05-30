@@ -49,7 +49,7 @@ public class CometServletTest extends HttpServlet implements HttpEventServlet {
     public void event(HttpEvent event) throws IOException, ServletException {
         try {
             HttpSession session = event.getHttpServletRequest().getSession(true);
-            //System.out.println("[" + session.getId() + "] " + event.getType());
+            System.out.println("[" + session.getId() + "] " + event.getType());
             session.setMaxInactiveInterval(-1);
             String sessid = session.getId();
             ServletOutputStream sos = event.getHttpServletResponse().getOutputStream();
