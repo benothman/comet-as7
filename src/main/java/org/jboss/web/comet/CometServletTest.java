@@ -105,9 +105,9 @@ public class CometServletTest extends HttpServlet implements HttpEventServlet {
     }
 
     /**
-     * 
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     private void testAndWrite(HttpEvent event) throws Exception {
         String sessid = event.getHttpServletRequest().getSession(true).getId();
@@ -119,14 +119,13 @@ public class CometServletTest extends HttpServlet implements HttpEventServlet {
     }
 
     /**
-     * 
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     private void write(HttpEvent event, String sessid) throws Exception {
         ServletOutputStream sos = event.getHttpServletResponse().getOutputStream();
         sos.println("[" + sessid + "] " + (count++) + " ");
         sos.flush();
-               
     }
 }
